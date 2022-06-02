@@ -1,19 +1,44 @@
+import { useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
-import logo from './logo.svg';
 import './App.css';
+import data from './components/bookData';
+import cartData from './components/cartData';
+import Detail from './components/Detail';
+import Cart from './components/Cart';
 
 function App() {
+  let [books, setBooks] = useState(data);
+  let [cart, setCart] = useState(cartData);
+  // detail 페이지에서 데이터를 받아올 수 있도록 이벤트핸들러 작성
+  let cartHandler = function(currentId) {
+    // 하트를 누른 책의 id, 이름, 작가를 state에 저장
+    // 중복 방지를 위해 set 자료형 사용
+    const cartArr = [...cart];
+    cartArr.push({id: parseInt(currentId), title: books[currentId].title, writer: books[currentId].writer});
+
+    let cartSet = [...new Set(cartArr.map(JSON.stringify))].map(JSON.parse);
+
+    setCart(cartSet);
+    localStorage.setItem('cart', JSON.stringify(cartSet));
+  }
   return (
     <Routes>
-      <Route path='/' element={<Main/>}/>
+      <Route path='/' element={<Main books={books}/>} />
+      <Route path='/detail/:id' element={<Detail books={books} cartHandler={cartHandler}/>} />
+      <Route path='/cart' element={<Cart cart={cart}/>} />
     </Routes>
   );
 }
 
-function Main() {
+function Main(props) {
+  let books = props.books; // List에 books를 넘겨주기 위해 변수에 저장
+  let navigate = useNavigate();
   return (
     <div className='mainContainer'>
+      <FontAwesomeIcon icon={faCartShopping} className="cart-btn" onClick={()=>{navigate('/cart')}}/>
       <h1>소설<br/>뭐읽지?</h1>
       <p>
         여러분에게 다양한 소설을 추천해드립니다. 
@@ -25,9 +50,35 @@ function Main() {
         <br/><br/>
         '소설 뭐읽지?'에서는 다양한 소설책을 구경할수도, 여러분의 취향에 맞는 책을 찜할 수도 있습니다. 하트를 눌러 마음에 드는 책을 저장하고, 카트 버튼을 눌러 저장한 책을 모두 볼 수 있습니다. 이제 다양한 소설을 만나러 가볼까요?
       </p>
-      <button className='scroll-btn'>
+      <button className='scroll-btn' onClick={()=>{
+        const list = document.querySelector('.book-list');
+        window.scrollTo(0, list.offsetTop + 220);
+      }}>
         둘러보기
       </button>
+      <List books={books}/>
+    </div>
+  )
+}
+
+function List(props) {
+  let navigate = useNavigate();
+  return (
+    <div className='book-list'>
+      {props.books.map((a, i) => {
+        let bookImg = "./img/book"+(i+1)+".jpg";
+        return (
+          <div className='book-list-card' key={i} onClick={()=>{
+            navigate('/detail/' + props.books[i].id);
+            window.scrollTo(0,0);}}>
+            <span className='book-list-img'>
+              <img src={require("./img/book"+ (props.books[i].id) +".jpg")} />
+            </span>
+            <p className='title'>{props.books[i].title}</p>
+            <p className='writer'>{props.books[i].writer}</p>
+          </div>
+        )
+      })}
     </div>
   )
 }
