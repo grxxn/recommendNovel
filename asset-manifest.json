@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/recommendNovel/static/css/main.9ee7d72f.css",
+    "main.js": "/recommendNovel/static/js/main.86009d47.js",
+    "static/js/787.d1afcdf0.chunk.js": "/recommendNovel/static/js/787.d1afcdf0.chunk.js",
+    "static/media/book13.jpg": "/recommendNovel/static/media/book13.3f71492fa32b5fa54aa2.jpg",
+    "static/media/book11.jpg": "/recommendNovel/static/media/book11.582dbf2a1cf1b28f0d14.jpg",
+    "static/media/book1.jpg": "/recommendNovel/static/media/book1.2fb5e16710004faef7f1.jpg",
+    "static/media/book8.jpg": "/recommendNovel/static/media/book8.5aa2e7b1f412048449ee.jpg",
+    "static/media/book7.jpg": "/recommendNovel/static/media/book7.4c89891bc4f72651e52a.jpg",
+    "static/media/book0.jpg": "/recommendNovel/static/media/book0.3d7e6728d83a0746946d.jpg",
+    "static/media/book10.jpg": "/recommendNovel/static/media/book10.52d1a3a582821ae0dc61.jpg",
+    "static/media/book3.jpg": "/recommendNovel/static/media/book3.421defb9bc4f71a9f17e.jpg",
+    "static/media/book6.jpg": "/recommendNovel/static/media/book6.50e894c4d73812b3b795.jpg",
+    "static/media/book14.jpg": "/recommendNovel/static/media/book14.b6ec3335c3e164e18006.jpg",
+    "static/media/book5.jpg": "/recommendNovel/static/media/book5.f1455cf3018adb5c602d.jpg",
+    "static/media/book9.jpg": "/recommendNovel/static/media/book9.d1f487296fc6392499c2.jpg",
+    "static/media/book4.jpg": "/recommendNovel/static/media/book4.bfdec76ce431132b6edb.jpg",
+    "static/media/book12.jpg": "/recommendNovel/static/media/book12.710c0d6145a1b5e6bb69.jpg",
+    "static/media/book2.jpg": "/recommendNovel/static/media/book2.54379f44a4514c0f54d8.jpg",
+    "index.html": "/recommendNovel/index.html",
+    "main.9ee7d72f.css.map": "/recommendNovel/static/css/main.9ee7d72f.css.map",
+    "main.86009d47.js.map": "/recommendNovel/static/js/main.86009d47.js.map",
+    "787.d1afcdf0.chunk.js.map": "/recommendNovel/static/js/787.d1afcdf0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9ee7d72f.css",
+    "static/js/main.86009d47.js"
+  ]
+}
