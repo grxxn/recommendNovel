@@ -13,7 +13,7 @@ function Cart() {
       <div className="cart-container">
         {cartItem 
         ? cartItem.map((a, i)=>{
-          return (<div key={i} className="cart-book" onClick={()=>{navigate('/detail/'+a.id)}}>
+          return (<div key={i} className="cart-book" onClick={()=>{navigate('/recommendNovel/detail/'+a.id)}}>
             <span className="cart-book-img">
               <img src={require("../img/book"+ a.id +".jpg")} />
             </span>

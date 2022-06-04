@@ -27,8 +27,8 @@ function App() {
   return (
     <Routes>
       <Route path='/recommendNovel' element={<Main books={books}/>} />
-      <Route path='/detail/:id' element={<Detail books={books} cartHandler={cartHandler}/>} />
-      <Route path='/cart' element={<Cart cart={cart}/>} />
+      <Route path='/recommendNovel/detail/:id' element={<Detail books={books} cartHandler={cartHandler}/>} />
+      <Route path='/recommendNovel/cart' element={<Cart cart={cart}/>} />
     </Routes>
   );
 }
@@ -38,7 +38,7 @@ function Main(props) {
   let navigate = useNavigate();
   return (
     <div className='mainContainer'>
-      <FontAwesomeIcon icon={faCartShopping} className="cart-btn" onClick={()=>{navigate('/cart')}}/>
+      <FontAwesomeIcon icon={faCartShopping} className="cart-btn" onClick={()=>{navigate('/recommendNovel/cart')}}/>
       <h1>소설<br/>뭐읽지?</h1>
       <p>
         여러분에게 다양한 소설을 추천해드립니다. 
@@ -69,7 +69,7 @@ function List(props) {
         let bookImg = "./img/book"+(i+1)+".jpg";
         return (
           <div className='book-list-card' key={i} onClick={()=>{
-            navigate('/detail/' + props.books[i].id);
+            navigate('/recommendNovel/detail/' + props.books[i].id);
             window.scrollTo(0,0);}}>
             <span className='book-list-img'>
               <img src={require("./img/book"+ (props.books[i].id) +".jpg")} />

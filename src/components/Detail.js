@@ -17,7 +17,7 @@ function Detail(props) {
       }
       recommendArr.push(
             <span className="rec-book" key={i} onClick={()=>{
-              navigate('/detail/'+props.books[i].id);
+              navigate('/recommendNovel/detail/'+props.books[i].id);
               window.scrollTo(0,0); // 페이지 이동시 페이지 상단으로 이동
               }}>
               <span className="book-content">
@@ -36,7 +36,7 @@ function Detail(props) {
         window.alert('책을 찜하였습니다 !');
         props.cartHandler(id);
       }}/>
-      <FontAwesomeIcon icon={faCartShopping} className="cart-btn" onClick={()=>{navigate('/cart')}} />
+      <FontAwesomeIcon icon={faCartShopping} className="cart-btn" onClick={()=>{navigate('/recommendNovel/cart')}} />
       <FontAwesomeIcon icon={faArrowLeft} className="back-btn" onClick={()=>{navigate('/recommendNovel')}} />
       <div className="book-desc">
         {/* 클릭한 책에 대한 설명 */}
