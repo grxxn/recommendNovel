@@ -8,7 +8,7 @@ function Cart() {
   return (
     <div className="mainContainer">
       <FontAwesomeIcon icon={faArrowLeft} className="back-btn" 
-      onClick={()=>{navigate('/')}}/>
+      onClick={()=>{navigate('/recommendNovel')}}/>
       <h2 className="cart-title">내가 찜한 책</h2>
       <div className="cart-container">
         {cartItem 

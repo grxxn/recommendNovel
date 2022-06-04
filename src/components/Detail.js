@@ -37,7 +37,7 @@ function Detail(props) {
         props.cartHandler(id);
       }}/>
       <FontAwesomeIcon icon={faCartShopping} className="cart-btn" onClick={()=>{navigate('/cart')}} />
-      <FontAwesomeIcon icon={faArrowLeft} className="back-btn" onClick={()=>{navigate('/')}} />
+      <FontAwesomeIcon icon={faArrowLeft} className="back-btn" onClick={()=>{navigate('/recommendNovel')}} />
       <div className="book-desc">
         {/* 클릭한 책에 대한 설명 */}
         <img src={require("../img/book"+(props.books[id].id)+".jpg")}/>
