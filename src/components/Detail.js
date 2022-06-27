@@ -11,7 +11,7 @@ function Detail(props) {
   const recommend = ()=>{
     const recommendArr = [];
     for(let i = 0; i < booksLength; i++){
-      if(i == id){
+      if(i === id){
         // i와 id 값이 같다면 책을 보여주지 않고 패스
         continue;
       }
@@ -21,7 +21,7 @@ function Detail(props) {
               window.scrollTo(0,0); // 페이지 이동시 페이지 상단으로 이동
               }}>
               <span className="book-content">
-                <img src={require("../img/book"+ (props.books[i].id) +".jpg")} />
+                <img src={require("../img/book"+ (props.books[i].id) +".jpg")} alt=""/>
                 {props.books[i].title}
               </span>
             </span>
@@ -40,7 +40,7 @@ function Detail(props) {
       <FontAwesomeIcon icon={faArrowLeft} className="back-btn" onClick={()=>{navigate('/recommendNovel')}} />
       <div className="book-desc">
         {/* 클릭한 책에 대한 설명 */}
-        <img src={require("../img/book"+(props.books[id].id)+".jpg")}/>
+        <img src={require("../img/book"+(props.books[id].id)+".jpg")} alt=""/>
         <span>
           <h2>{props.books[id].title}</h2>
           <p className="detail-writer">

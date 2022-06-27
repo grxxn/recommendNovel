@@ -15,7 +15,7 @@ function Cart() {
         ? cartItem.map((a, i)=>{
           return (<div key={i} className="cart-book" onClick={()=>{navigate('/recommendNovel/detail/'+a.id)}}>
             <span className="cart-book-img">
-              <img src={require("../img/book"+ a.id +".jpg")} />
+              <img src={require("../img/book"+ a.id +".jpg")} alt=""/>
             </span>
             <p>{a.title}</p>
             <p>{a.writer}</p>

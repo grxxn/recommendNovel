@@ -151,7 +151,8 @@ ul {
 
 .book-list-card {
   margin-bottom: 60px;
-  transition: 0.2s;
+  padding: 0 5px;
+  transition: all 0.2s;
 }
 
 .book-list-card:hover {
