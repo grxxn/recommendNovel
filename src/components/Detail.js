@@ -8,7 +8,8 @@ function Detail(props) {
   let {id} = useParams(); // 클릭한 책의 id(url에서 가져온 번호)
   let booksLength = props.books.length; // 저장된 책의 갯수
 
-  const recommend = ()=>{
+  const recommendFnc = ()=>{
+    // 다른 책 둘러보기 리스트 출력
     const recommendArr = [];
     for(let i = 0; i < booksLength; i++){
       if(i === id){
@@ -16,15 +17,15 @@ function Detail(props) {
         continue;
       }
       recommendArr.push(
-            <span className="rec-book" key={i} onClick={()=>{
-              navigate('/recommendNovel/detail/'+props.books[i].id);
-              window.scrollTo(0,0); // 페이지 이동시 페이지 상단으로 이동
-              }}>
-              <span className="book-content">
-                <img src={require("../img/book"+ (props.books[i].id) +".jpg")} alt=""/>
-                {props.books[i].title}
-              </span>
-            </span>
+        <span className="rec-book" key={i} onClick={()=>{
+          navigate('/recommendNovel/detail/'+props.books[i].id);
+          window.scrollTo(0,0); // 페이지 이동시 페이지 상단으로 이동
+          }}>
+          <span className="book-content">
+            <img src={require("../img/book"+ (props.books[i].id) +".jpg")} alt=""/>
+            {props.books[i].title}
+          </span>
+        </span>
       );
     }
     return recommendArr;
@@ -32,12 +33,24 @@ function Detail(props) {
 
   return (
     <div className="mainContainer">
-      <FontAwesomeIcon icon={faHeart} className="heart-btn" onClick={(e)=>{
-        window.alert('책을 찜하였습니다 !');
-        props.cartHandler(id);
-      }}/>
-      <FontAwesomeIcon icon={faCartShopping} className="cart-btn" onClick={()=>{navigate('/recommendNovel/cart')}} />
-      <FontAwesomeIcon icon={faArrowLeft} className="back-btn" onClick={()=>{navigate('/recommendNovel')}} />
+      <FontAwesomeIcon 
+        icon={faHeart} 
+        className="heart-btn" 
+        onClick={()=>{
+          window.alert('책을 찜하였습니다 !');
+          props.cartHandler(id);
+        }}
+      />
+      <FontAwesomeIcon 
+        icon={faCartShopping} 
+        className="cart-btn" 
+        onClick={()=>{navigate('/recommendNovel/cart')}} 
+      />
+      <FontAwesomeIcon 
+        icon={faArrowLeft} 
+        className="back-btn" 
+        onClick={()=>{navigate('/recommendNovel')}} 
+      />
       <div className="book-desc">
         {/* 클릭한 책에 대한 설명 */}
         <img src={require("../img/book"+(props.books[id].id)+".jpg")} alt=""/>
@@ -65,7 +78,7 @@ function Detail(props) {
         {/* 다른 책 추천 */}
         <h4>다른 책 둘러보기</h4>
         <div className="rec-book-list">
-          {recommend()}
+          {recommendFnc()}
         </div>
       </div>
     </div>

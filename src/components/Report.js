@@ -1,26 +1,29 @@
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRef } from "react";
 
 function Report(props) {
-  // 인상깊은 구절
+  // 인상깊은 구절 슬라이드 
   let id = props.id;
   let reports = props.books[id].reports;
+  const cardEle = useRef();
+  const cardBoxEle = useRef();
 
   const cardToLeft = () => {
-    const card = document.querySelector('.reports');
-        let cardLeft = card.offsetLeft;
+    const card = cardEle.current;
+    let cardLeft = card.offsetLeft;
         
-        cardLeft += 530;
-        if(cardLeft > 0){
-          cardLeft = 0;
-        }
-        card.style.left = cardLeft + 'px';
+    cardLeft += 530;
+    if(cardLeft > 0){
+      cardLeft = 0;
+    }
+    card.style.left = cardLeft + 'px';
   }
   const cardToRight = () => {
-    const card = document.querySelector('.reports');
+    const card = cardEle.current;
     let cardLeft = card.offsetLeft;
     let cardContainer = reports.length * 530;
-    let cardWidth = document.querySelector('.reportsCardBox').offsetWidth;
+    let cardWidth = cardBoxEle.current.offsetWidth;
     let maxLeft = cardContainer - cardWidth;
 
     cardLeft -= 530;
@@ -37,8 +40,8 @@ function Report(props) {
         className="reports-left-btn" 
         onClick={cardToLeft} 
       />
-      <div className="reports-card-box">
-        <div className="reports">
+      <div className="reports-card-box" ref={cardBoxEle}>
+        <div className="reports" ref={cardEle}>
           {
           // reports가 있는 경우에만 보여주고 아닐 경우 null
           reports

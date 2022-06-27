@@ -18,7 +18,7 @@ function App() {
     .then(response => setBooks(response.data));
 
     axios('./data/cartData.json')
-    .then(response => setCart(response))
+    .then(response => setCart(response.data));
   }, [])
 
   // detail 페이지에서 데이터를 받아올 수 있도록 이벤트핸들러 작성
