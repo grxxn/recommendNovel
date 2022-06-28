@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
-// import data from '../public/data/bookData';
-// import cartData from '../public/data/cartData';
 import Detail from './components/Detail';
 import Cart from './components/Cart';
 import Main from './components/Main';
