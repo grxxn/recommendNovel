@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/recommendNovel/static/css/main.9ee7d72f.css",
-    "main.js": "/recommendNovel/static/js/main.272716fc.js",
+    "main.css": "/recommendNovel/static/css/main.188603b7.css",
+    "main.js": "/recommendNovel/static/js/main.cab7f554.js",
     "static/js/787.d1afcdf0.chunk.js": "/recommendNovel/static/js/787.d1afcdf0.chunk.js",
     "static/media/book13.jpg": "/recommendNovel/static/media/book13.3f71492fa32b5fa54aa2.jpg",
     "static/media/book11.jpg": "/recommendNovel/static/media/book11.582dbf2a1cf1b28f0d14.jpg",
@@ -19,12 +19,12 @@
     "static/media/book12.jpg": "/recommendNovel/static/media/book12.710c0d6145a1b5e6bb69.jpg",
     "static/media/book2.jpg": "/recommendNovel/static/media/book2.54379f44a4514c0f54d8.jpg",
     "index.html": "/recommendNovel/index.html",
-    "main.9ee7d72f.css.map": "/recommendNovel/static/css/main.9ee7d72f.css.map",
-    "main.272716fc.js.map": "/recommendNovel/static/js/main.272716fc.js.map",
+    "main.188603b7.css.map": "/recommendNovel/static/css/main.188603b7.css.map",
+    "main.cab7f554.js.map": "/recommendNovel/static/js/main.cab7f554.js.map",
     "787.d1afcdf0.chunk.js.map": "/recommendNovel/static/js/787.d1afcdf0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ee7d72f.css",
-    "static/js/main.272716fc.js"
+    "static/css/main.188603b7.css",
+    "static/js/main.cab7f554.js"
   ]
 }
