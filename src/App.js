@@ -12,6 +12,7 @@ import MypageRedirect from './route/MypageRedirect';
 function App() {
   let [books, setBooks] = useState([]);
   let [cart, setCart] = useState([]);
+  let [auth, setAuth] = useState(false);
 
   useEffect(()=> {
     axios('./data/bookData.json')
@@ -35,11 +36,11 @@ function App() {
 
   return (
     <Routes>
-      <Route path='/recommendNovel' element={<Main books={books}/>} />
+      <Route path='/recommendNovel' element={<Main books={books} auth={auth} setAuth={setAuth}/>} />
       <Route path='/recommendNovel/detail/:id' element={<Detail books={books} cartHandler={cartHandler} />} />
       <Route path='/recommendNovel/cart' element={<Cart cart={cart} />} />
-      <Route path='/recommendNovel/mypage' element={<MypageRedirect />} />
-      <Route path='/recommendNovel/login' element={<Login />}/>
+      <Route path='/recommendNovel/mypage' element={<MypageRedirect auth={auth} />} />
+      <Route path='/recommendNovel/login' element={<Login auth={auth} setAuth={setAuth}/>}/>
     </Routes>
   );
 }

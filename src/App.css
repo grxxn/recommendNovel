@@ -215,12 +215,26 @@ ul {
   font-size: 35px;
   cursor: pointer;
 }
-.login-btn {
+.mypage-btn {
   position: absolute;
   top: -54px;
   right: 86px;
   font-size: 40px;
   cursor: pointer;
+}
+.login-btn, .logout-btn {
+  position: absolute;
+  top: -45px;
+  right: 154px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.login-btn {
+  right: 100px;
+}
+.login-btn:hover, .logout-btn:hover {
+  font-weight: 700;
 }
 .cart-btn {
   position: absolute;

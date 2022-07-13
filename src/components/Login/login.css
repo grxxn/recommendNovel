@@ -6,6 +6,7 @@
   min-height: 100vh;
 }
 .login-form-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,4 +47,12 @@
   background-color: rgb(44, 60, 203);
   color: #fff;
   padding: 8px 0;
+  cursor: pointer;
+}
+.login-x-icon {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 30px;
+  cursor: pointer;
 }
