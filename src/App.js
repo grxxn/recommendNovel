@@ -34,8 +34,8 @@ function App() {
   return (
     <Routes>
       <Route path='/recommendNovel' element={<Main books={books}/>} />
-      <Route path='/recommendNovel/detail/:id' element={<Detail books={books} cartHandler={cartHandler}/>} />
-      <Route path='/recommendNovel/cart' element={<Cart cart={cart}/>} />
+      <Route path='/recommendNovel/detail/:id' element={<Detail books={books} cartHandler={cartHandler} />} />
+      <Route path='/recommendNovel/cart' element={<Cart cart={cart} />} />
     </Routes>
   );
 }

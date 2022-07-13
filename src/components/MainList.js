@@ -4,6 +4,19 @@ import { useNavigate } from 'react-router-dom';
 function MainList(props) {
   let navigate = useNavigate();
   const list = useRef();
+  const bookList = props.books.map((book) => {
+    return (
+      <div className='book-list-card' key={book.id} onClick={()=>{
+        navigate(`/recommendNovel/detail/${book.id}`);
+        window.scrollTo(0,0);}}>
+        <span className='book-list-img'>
+          <img src={require("./../img/book"+ (book.id) +".jpg")} alt=""/>
+        </span>
+        <p className='title'>{book.title}</p>
+        <p className='writer'>{book.writer}</p>
+      </div>
+    )
+  })
 
   useEffect(()=>{
     props.setListHeight(list.current.offsetTop);
@@ -11,19 +24,7 @@ function MainList(props) {
 
   return (
     <div className='book-list' ref={list}>
-      {props.books.map((a, i) => {
-        return (
-          <div className='book-list-card' key={i} onClick={()=>{
-            navigate('/recommendNovel/detail/' + props.books[i].id);
-            window.scrollTo(0,0);}}>
-            <span className='book-list-img'>
-              <img src={require("./../img/book"+ (props.books[i].id) +".jpg")} alt=""/>
-            </span>
-            <p className='title'>{props.books[i].title}</p>
-            <p className='writer'>{props.books[i].writer}</p>
-          </div>
-        )
-      })}
+      {bookList}
     </div>
   )
 }
