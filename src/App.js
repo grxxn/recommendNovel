@@ -6,6 +6,8 @@ import Detail from './components/Detail';
 import Cart from './components/Cart';
 import Main from './components/Main';
 import axios from 'axios';
+import Login from './components/Login/Login';
+import MypageRedirect from './route/MypageRedirect';
 
 function App() {
   let [books, setBooks] = useState([]);
@@ -36,6 +38,8 @@ function App() {
       <Route path='/recommendNovel' element={<Main books={books}/>} />
       <Route path='/recommendNovel/detail/:id' element={<Detail books={books} cartHandler={cartHandler} />} />
       <Route path='/recommendNovel/cart' element={<Cart cart={cart} />} />
+      <Route path='/recommendNovel/mypage' element={<MypageRedirect />} />
+      <Route path='/recommendNovel/login' element={<Login />}/>
     </Routes>
   );
 }

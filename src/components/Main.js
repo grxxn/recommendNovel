@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import MainList from './MainList';
 
 function Main(props) {
@@ -11,6 +11,7 @@ function Main(props) {
 
   return (
     <div className='mainContainer'>
+      <FontAwesomeIcon icon={faCircleUser} className="login-btn" onClick={()=>{navigate('/recommendNovel/login')}} />
       <FontAwesomeIcon icon={faCartShopping} className="cart-btn" onClick={()=>{navigate('/recommendNovel/cart')}}/>
       <h1>소설<br/>뭐읽지?</h1>
       <p>
