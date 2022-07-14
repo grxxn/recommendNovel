@@ -351,6 +351,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 
 .book-content>img {
@@ -403,7 +404,7 @@ ul {
   min-height: 320px;
   font-size: 14px;
   border: 1px solid #666;
-  padding: 30px 20px;
+  padding: 0 20px;
 }
 .report-card>p {
   text-align: center;
