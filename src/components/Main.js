@@ -9,26 +9,21 @@ function Main(props) {
   let navigate = useNavigate();
   let [listHeight, setListHeight] = useState(0);
 
-  console.log(props.auth)
-
   return (
     <div className='mainContainer'>
       {
         props.auth
-        ? <>
-            <FontAwesomeIcon 
-              icon={faCircleUser} 
-              className="mypage-btn onLogin" 
-              onClick={()=>{navigate('/recommendNovel/mypage');}} 
-            /> 
-            <button className='logout-btn' onClick={()=>{props.setAuth(false)}}>로그아웃하기</button>
-          </>
+        ? <button 
+            className='logout-btn' 
+            onClick={()=>{props.setAuth(false)}}
+          >로그아웃하기</button>
         : <button
             className="login-btn" 
             onClick={()=>navigate('/recommendNovel/login')} 
           >로그인하기</button>
       }
       <FontAwesomeIcon icon={faCartShopping} className="cart-btn" onClick={()=>{navigate('/recommendNovel/cart')}}/>
+      
       <h1>소설<br/>뭐읽지?</h1>
       <p>
         여러분에게 다양한 소설을 추천해드립니다. 

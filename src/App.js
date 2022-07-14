@@ -38,8 +38,7 @@ function App() {
     <Routes>
       <Route path='/recommendNovel' element={<Main books={books} auth={auth} setAuth={setAuth}/>} />
       <Route path='/recommendNovel/detail/:id' element={<Detail books={books} cartHandler={cartHandler} />} />
-      <Route path='/recommendNovel/cart' element={<Cart cart={cart} />} />
-      <Route path='/recommendNovel/mypage' element={<MypageRedirect auth={auth} />} />
+      <Route path='/recommendNovel/cart' element={<MypageRedirect auth={auth} />} />
       <Route path='/recommendNovel/login' element={<Login auth={auth} setAuth={setAuth}/>}/>
     </Routes>
   );

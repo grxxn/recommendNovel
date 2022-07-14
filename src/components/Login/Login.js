@@ -5,11 +5,13 @@ import './login.css';
 import { useNavigate } from 'react-router-dom';
 
 const Login = ({auth, setAuth}) => {
+  console.log(auth, setAuth)
+
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     setAuth(true);
-    navigate('/recommendNovel');
+    navigate('/recommendNovel/cart');
   }
 
   return (
@@ -18,22 +20,24 @@ const Login = ({auth, setAuth}) => {
         <h3 className='login-title'>LOGIN</h3>
         <form id='loginForm' onSubmit={e => handleSubmit(e)}>
           <table>
-            <tr>
-              <td>
-                <label htmlFor='userId'>아이디</label>
-              </td>
-              <td>
-                <input type='text' id='userId' />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label htmlFor='userPw'>비밀번호</label>
-              </td>
-              <td>
-                <input type='password' id='userPw' />
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>
+                  <label htmlFor='userId'>아이디</label>
+                </td>
+                <td>
+                  <input type='text' id='userId' />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label htmlFor='userPw'>비밀번호</label>
+                </td>
+                <td>
+                  <input type='password' id='userPw' />
+                </td>
+              </tr>
+            </tbody>
           </table>
           <button type='submit' className='submit-btn'>로그인</button>
         </form>
