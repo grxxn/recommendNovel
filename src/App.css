@@ -225,13 +225,10 @@ ul {
 .login-btn, .logout-btn {
   position: absolute;
   top: -45px;
-  right: 154px;
+  right: 100px;
   cursor: pointer;
   border: none;
   background-color: transparent;
-}
-.login-btn {
-  right: 100px;
 }
 .login-btn:hover, .logout-btn:hover {
   font-weight: 700;

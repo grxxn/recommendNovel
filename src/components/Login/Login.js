@@ -11,7 +11,7 @@ const Login = ({auth, setAuth}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setAuth(true);
-    navigate('/recommendNovel/cart');
+    navigate('/recommendNovel');
   }
 
   return (

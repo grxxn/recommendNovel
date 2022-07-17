@@ -16,11 +16,11 @@ function Main(props) {
         ? <button 
             className='logout-btn' 
             onClick={()=>{props.setAuth(false)}}
-          >로그아웃하기</button>
+          >로그아웃</button>
         : <button
             className="login-btn" 
             onClick={()=>navigate('/recommendNovel/login')} 
-          >로그인하기</button>
+          >로그인</button>
       }
       <FontAwesomeIcon icon={faCartShopping} className="cart-btn" onClick={()=>{navigate('/recommendNovel/cart')}}/>
       
